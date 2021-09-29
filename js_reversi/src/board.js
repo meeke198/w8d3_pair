@@ -9,7 +9,19 @@ if (typeof window === 'undefined'){
  * and two white pieces at [3, 3] and [4, 4]
  */
 function _makeGrid () {
-}
+  let grid = [];
+  for (let i = 0; i < 8; i++) {
+    let pos = []
+    for (let j = 0; j < 8; j++) {
+      let pos.push(this[j][i])
+    }
+    grid.push(pos)
+  }
+  grid[3][4] = new Piece("black");
+  grid[4][3] = new Piece("black");
+  grid[3][3] = new Piece("white");
+  grid[4][4] = new Piece("white");
+};
 
 /**
  * Constructs a Board with a starting grid set up.
